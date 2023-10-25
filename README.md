@@ -37,3 +37,20 @@ docker run -d --network=reddit  -p 9292:9292 tigerbybyby/ui:1.0
 
 ```
 
+## Homework #15
+
+### What done
+- 
+- Tested docker network drivers: none, host, bridge
+- Installed docker-compose
+- Creted docker-compose.yml
+- Used environments
+
+
+### Run commands
+```
+docker-compose up -d
+docker ps -a
+
+```
+
