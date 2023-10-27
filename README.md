@@ -54,3 +54,23 @@ docker ps -a
 
 ```
 
+## Homework #16
+
+### What done
+- 
+- Installed kvm virtual machine
+- Installed docker and docker-compose on vm
+- Installed gitlab-ce from docker-compose.yml
+- Created and configured gitlab-ci.yml
+- Created stage and prod stages
+- Succesfully runned pipeline jobs
+
+
+### Run commands
+```
+git checkout -b gitlab-ci-1
+git remote add gitlab http://<your-vm-ip>/homework/example.git
+git push gitlab gitlab-ci-1
+
+```
+
