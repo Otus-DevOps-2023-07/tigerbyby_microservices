@@ -8,7 +8,9 @@ help:
 	@echo "make push"
 	@echo "	Push to github"
 	@echo "make deploy"
-	@echo "Deploy docker-compose app"
+	@echo "	Start app (docker-compose up -d)"
+	@echo "make stop"
+	@echo "	Stop app (docker-compose down)"
 
 .build_post:
 	@echo "Building post"
