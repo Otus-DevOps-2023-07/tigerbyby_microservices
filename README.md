@@ -1,3 +1,5 @@
+[![Run tests for OTUS homework](https://github.com/Otus-DevOps-2023-07/tigerbyby_microservices/actions/workflows/run-tests.yml/badge.svg)](https://github.com/Otus-DevOps-2023-07/tigerbyby_microservices/actions/workflows/run-tests.yml)
+
 # tigerbyby_microservices
 tigerbyby microservices repository
 
