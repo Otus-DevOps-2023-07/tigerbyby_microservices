@@ -1,8 +1,6 @@
 # tigerbyby_microservices
 tigerbyby microservices repository
 
-[![GitHub CI build status badge](https://github.com/Otus-DevOps-2023-07/tigerbyby_microservices/workflows/Images/badge.svg)](https://github.com/Otus-DevOps-2023-07/tigerbyby_microservices/actions?query=workflow%3AImages)
-
 ## Homework #13
 
 ### What done
