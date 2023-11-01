@@ -7,21 +7,27 @@ help:
 	@echo "	Build images"
 	@echo "make push"
 	@echo "	Push to github"
+	@echo "make deploy"
+	@echo "Deploy docker-compose app"
 
 .build_post:
 	@echo "Building post"
-	@cd ./src && docker build -t ${USER_NAME}/post:1.0 post-py
+	@cd ./src && docker build -t ${USER_NAME}/post post-py
 
 .build_comment:
 	@pwd
 	@echo "Building comment"
-	@cd ./src && docker build -t ${USER_NAME}/comment:1.0 comment
+	@cd ./src && docker build -t ${USER_NAME}/comment comment
 
 .build_ui:
 	@echo "Building ui"
-	@cd ./src && docker build -t ${USER_NAME}/ui:1.0 ui
+	@cd ./src && docker build -t ${USER_NAME}/ui ui
 
-build: .build_post .build_comment .build_ui
+.build_prometheus:
+	@echo "Building prometheus"
+	@cd ./monitoring/ && docker build -t ${USER_NAME}/prometheus .
+
+build: .build_post .build_comment .build_ui .build_prometheus
 
 .docker_login:
 	@docker login -u ${USER_NAME}
@@ -32,3 +38,11 @@ build: .build_post .build_comment .build_ui
 	@docker push ${USER_NAME}/ui
 
 push: .docker_login .docker_push
+
+deploy:
+	@echo "Starting app..."
+	@cd docker && docker-compose up -d
+
+stop:
+	@echo "Stoping app..."
+	@cd docker && docker-compose down

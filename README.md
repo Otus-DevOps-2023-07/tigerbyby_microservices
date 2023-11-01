@@ -74,3 +74,23 @@ git push gitlab gitlab-ci-1
 
 ```
 
+## Homework #17
+
+### What done
+- Added prometheus Docker file and config
+- Built prometheus image and pushed it to dockerhub
+- Configured node_exporter
+- Configured mongodb_exporter
+- Added exporters into docker-compose.yml
+- Configured blackbox_exporter
+- Created Makefile
+
+
+### Run commands
+```
+for i in ui post-py comment; do cd src/$i; bash docker_build.sh; cd -; done
+docker-compose up -d
+make help
+
+```
+
