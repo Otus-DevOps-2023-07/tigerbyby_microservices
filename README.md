@@ -1,3 +1,5 @@
+[![Run tests for OTUS homework](https://github.com/Otus-DevOps-2023-07/tigerbyby_microservices/actions/workflows/run-tests.yml/badge.svg)](https://github.com/Otus-DevOps-2023-07/tigerbyby_microservices/actions/workflows/run-tests.yml)
+
 # tigerbyby_microservices
 tigerbyby microservices repository
 
@@ -71,6 +73,26 @@ docker ps -a
 git checkout -b gitlab-ci-1
 git remote add gitlab http://<your-vm-ip>/homework/example.git
 git push gitlab gitlab-ci-1
+
+```
+
+## Homework #17
+
+### What done
+- Added prometheus Docker file and config
+- Built prometheus image and pushed it to dockerhub
+- Configured node_exporter
+- Configured mongodb_exporter
+- Added exporters into docker-compose.yml
+- Configured blackbox_exporter
+- Created Makefile
+
+
+### Run commands
+```
+for i in ui post-py comment; do cd src/$i; bash docker_build.sh; cd -; done
+docker-compose up -d
+make help
 
 ```
 
