@@ -96,3 +96,43 @@ make help
 
 ```
 
+## Homework #17
+
+### What done
+- Installed golang latest version and yandex driver
+```
+wget https://go.dev/dl/go1.21.4.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin:~/go/bin' > ~/.bashrc ## Debian
+go env -w GO111MODULE=off
+go get -u github.com/yandex-cloud/docker-machine-driver-yandex
+go version
+
+```
+- Created docker-machine. Modified command for current versions
+```
+docker-machine create \
+ --driver yandex \
+ --yandex-image-family "ubuntu-1804-lts" \
+ --yandex-platform-id "standard-v1" \
+ --yandex-folder-id $FOLDER_ID \
+ --yandex-sa-key-file $SA_KEY_PATH \
+ --yandex-memory "4" \
+ --yandex-nat \ # Added
+ logging
+```
+- Created flentd dockerfile and config
+- Built fluentd docker image
+- Runned docker-composes for app and logs
+- Used kibana web interface
+- Used grok in fluentd config
+- Added zipkin to logging
+- Tested bugged code
+
+
+
+### Run commands
+```
+cd docker; docker-compose -f docker-compose-logging.yml up -d; docker-compose up -d
+```
+
