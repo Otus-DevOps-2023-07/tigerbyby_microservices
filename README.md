@@ -96,7 +96,7 @@ make help
 
 ```
 
-## Homework #17
+## Homework #18
 
 ### What done
 - Installed golang latest version and yandex driver
@@ -135,4 +135,22 @@ docker-machine create \
 ```
 cd docker; docker-compose -f docker-compose-logging.yml up -d; docker-compose up -d
 ```
+
+## Homework #19
+
+### What done
+- Installed k8s using shkrga's terraform and ansible. (Added apt update into ansible playbook, used image ubuntu 20.04)
+  After Ubuntu 21.04 you need to enable systemd cgroup https://stackoverflow.com/questions/55571566/unable-to-bring-up-kubernetes-api-server
+- Created k8s manifests in kubernetes/reddit directory
+- Runned all manifests
+
+
+### Run commands
+```
+cd kubernetes/terraform; terraform apply
+cd ../ansible; ansible-playbook -i inventory.yml playbooks/k8s.yml
+cd ../; scp -r reddit ubuntu@<IP>:~
+ssh ubuntu@<IP> sudo kubectl apply -f ~/reddit/*.yml
+```
+
 
