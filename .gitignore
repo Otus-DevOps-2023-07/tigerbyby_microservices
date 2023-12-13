@@ -4,4 +4,5 @@ build_info.txt
 .env
 terraform.tfstate*
 terraform.tfvars
+.terraform*
 key.json
