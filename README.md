@@ -176,3 +176,20 @@ kubectl apply -f ./kubernetes/reddit/dev-namespace.yml
 kubectl apply -f ./kubernetes/reddit/ -n dev
 ```
 
+## Homework #21
+
+### What done
+- Learned kube-dns
+- Learned load-balancer
+- Installed ingress controller
+- Created tls cert and used ingress-secret
+- Used network policy
+- Created volume and claimed it to mongo pod
+
+
+### Run commands
+
+```
+kubectl apply -f ./kubernetes/reddit -n dev
+```
+
