@@ -2,3 +2,8 @@ build_info.txt
 ## python specific
 *.pyc
 .env
+terraform.tfstate*
+terraform.tfvars
+.terraform*
+key.json
+kubernetes/reddit/tls.*
