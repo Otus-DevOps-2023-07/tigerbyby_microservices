@@ -1,0 +1,8 @@
+apiVersion: v2
+name: post
+description: OTUS reddit application POST
+version: 1.0.0
+maintainers:
+  - name: Slava Kshim
+    email: tigerbyby@gmail.com
+appVersion: 1.0
