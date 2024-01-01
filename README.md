@@ -96,7 +96,7 @@ make help
 
 ```
 
-## Homework #17
+## Homework #18
 
 ### What done
 - Installed golang latest version and yandex driver
@@ -134,5 +134,90 @@ docker-machine create \
 ### Run commands
 ```
 cd docker; docker-compose -f docker-compose-logging.yml up -d; docker-compose up -d
+```
+
+## Homework #19
+
+### What done
+- Installed k8s using shkrga's terraform and ansible. (Added apt update into ansible playbook, used image ubuntu 20.04)
+  After Ubuntu 21.04 you need to enable systemd cgroup https://stackoverflow.com/questions/55571566/unable-to-bring-up-kubernetes-api-server
+- Created k8s manifests in kubernetes/reddit directory
+- Runned all manifests
+
+
+### Run commands
+```
+cd kubernetes/terraform; terraform apply
+cd ../ansible; ansible-playbook -i inventory.yml playbooks/k8s.yml
+cd ../; scp -r reddit ubuntu@<IP>:~
+ssh ubuntu@<IP> sudo kubectl apply -f ~/reddit/*.yml
+```
+
+## Homework #20
+
+### What done
+- Installed minikube
+- Learned ~/.kube/config
+- Created deployment and service manifests
+- Used minikube dashboard
+- Used namespaces (dev)
+- Created yandex k8s cluster and hostgroup
+- Applied manifests in yandex k8s
+
+
+### Run commands
+
+```
+minikube start
+kubectl get nodes
+kubectl apply -f ./kubernetes/reddit
+minikube dashboard
+kubectl apply -f ./kubernetes/reddit/dev-namespace.yml
+kubectl apply -f ./kubernetes/reddit/ -n dev
+```
+
+## Homework #21
+
+### What done
+- Learned kube-dns
+- Learned load-balancer
+- Installed ingress controller
+- Created tls cert and used ingress-secret
+- Used network policy
+- Created volume and claimed it to mongo pod
+
+
+### Run commands
+
+```
+kubectl apply -f ./kubernetes/reddit -n dev
+```
+## Homework #22 (Final boss)
+
+### What done
+
+- Installed helm latest version
+- Created Charts directory with subdirectories
+- Configured templates files for ui, comment and post
+- Used _helpers.tpl
+- Used helm requirements
+- Not used deprecated tiller plugin
+- installed gitlab by helm chart
+  - set privileged to true in runner setting. (For build stage dind) 
+  - set ce version
+  - kubectl get secret gitlab-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo
+- Created gitlab group and projects
+- Configred .gitlab-ci.yml for projects
+
+### Run commands
+
+Helm
+```
+helm install ${name} ${path}
+helm ls
+helm delete ${name}
+helm dep update
+helm upgrade ${name} ${path}
+
 ```
 

@@ -1,0 +1,8 @@
+apiVersion: v2
+name: ui
+description: OTUS reddit application UI
+version: 1.0.0
+maintainers:
+  - name: Slava Kshim
+    email: tigerbyby@gmail.com
+appVersion: 1.0
