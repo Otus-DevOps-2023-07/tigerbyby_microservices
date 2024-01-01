@@ -192,4 +192,17 @@ kubectl apply -f ./kubernetes/reddit/ -n dev
 ```
 kubectl apply -f ./kubernetes/reddit -n dev
 ```
+## Homework #22 (Final boss)
 
+### What done
+
+
+### Run commands
+
+```
+kubectl apply -f ./kubernetes/reddit -n dev
+```
+
+
+########
+kubectl get secret gitlab-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo
