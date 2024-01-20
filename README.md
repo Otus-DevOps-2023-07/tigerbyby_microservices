@@ -153,4 +153,26 @@ cd ../; scp -r reddit ubuntu@<IP>:~
 ssh ubuntu@<IP> sudo kubectl apply -f ~/reddit/*.yml
 ```
 
+## Homework #20
+
+### What done
+- Installed minikube
+- Learned ~/.kube/config
+- Created deployment and service manifests
+- Used minikube dashboard
+- Used namespaces (dev)
+- Created yandex k8s cluster and hostgroup
+- Applied manifests in yandex k8s
+
+
+### Run commands
+
+```
+minikube start
+kubectl get nodes
+kubectl apply -f ./kubernetes/reddit
+minikube dashboard
+kubectl apply -f ./kubernetes/reddit/dev-namespace.yml
+kubectl apply -f ./kubernetes/reddit/ -n dev
+```
 
