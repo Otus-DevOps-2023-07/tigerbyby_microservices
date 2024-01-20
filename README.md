@@ -192,4 +192,32 @@ kubectl apply -f ./kubernetes/reddit/ -n dev
 ```
 kubectl apply -f ./kubernetes/reddit -n dev
 ```
+## Homework #22 (Final boss)
+
+### What done
+
+- Installed helm latest version
+- Created Charts directory with subdirectories
+- Configured templates files for ui, comment and post
+- Used _helpers.tpl
+- Used helm requirements
+- Not used deprecated tiller plugin
+- installed gitlab by helm chart
+  - set privileged to true in runner setting. (For build stage dind) 
+  - set ce version
+  - kubectl get secret gitlab-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo
+- Created gitlab group and projects
+- Configred .gitlab-ci.yml for projects
+
+### Run commands
+
+Helm
+```
+helm install ${name} ${path}
+helm ls
+helm delete ${name}
+helm dep update
+helm upgrade ${name} ${path}
+
+```
 
